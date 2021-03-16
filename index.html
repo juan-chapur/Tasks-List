@@ -10,11 +10,11 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="bg-secondary">
     <!-- NAVIGATION -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-dark">
         <div class="container">
-            <a href="" class="navbar-brand">Task app</a>
+            <a href="" class="navbar-brand text-light">Task app</a>
         </div>
     </nav>
 
@@ -22,11 +22,11 @@
     <div class="container">
         <div class="row pt-5">
             <div class="col-md-4">
-                <div class="card">
+                <div class="card bg-dark">
                     <div class="card-body">
                         <form id="formTask">
                             <div class="form-floating mb-3">
-                                <input type="text" id="title" class="form-control" placeholder="Task name">
+                                <input type="text" id="title" class="form-control" style="border:0;" placeholder="Task name">
                                 <label for="title">Task name</label>
                             </div>
                             <div class="form-floating mb-3">
@@ -34,7 +34,7 @@
                                     class="form-control" style="height: 100px"></textarea>
                                 <label for="description">Task description</label>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Add task</button>
+                            <button type="submit" class="btn btn-success w-100">Add task</button>
                         </form>
                     </div>
                 </div>
