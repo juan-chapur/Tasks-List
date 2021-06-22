@@ -46,8 +46,8 @@ function getTasks() {
 		let description = tasks[i].description;
 
 		tasksView.innerHTML += `
-		<div class="row">
-	  		<div class="card mb-3 bg-dark text-light">
+		<div class="row mx-1">
+	  		<div class="card mb-2 bg-dark text-light">
 				<div class="card-body">
                 	<div class="card-title"><h5>${title}</h5></div>
     				<p class="card-text">${description}</p>
