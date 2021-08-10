@@ -67,9 +67,9 @@ function setTask(e) {
 
 function deleteTask(titleTask) {
     let tasks = JSON.parse(localStorage.getItem('tasks'));
-    tasks.forEach(item => {
-        if (item.title == titleTask) {
-            tasks.splice(item, 1);
+    tasks.forEach((element, index) => {
+        if (element.title == titleTask) {
+            tasks.splice(index, 1);
         }
     });
     localStorage.setItem('tasks', JSON.stringify(tasks));
