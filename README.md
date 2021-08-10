@@ -17,7 +17,7 @@
 
 ![Screenshot](Screenshot-Task-List.png)
 ![Screenshot](Screenshot-Task-List-1.png)
-![Screenshot](Screenshot-Task-List-Mobile.png) ![Screenshot](Screenshot-Task-List-Mobile-1.png)
+![Screenshot](Screenshot-Task-List-Mobile.png)
 
 
 ## Prueba 🎮
