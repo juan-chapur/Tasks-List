@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-16">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasks app</title>
@@ -22,16 +22,16 @@
     <!-- MAIN CONTENT -->
     <div class="container">
         <div class="row pt-5">
-            <div class="col-md-4 mb-2">
+            <div class="col-md-4 mb-2" id="menuAdd">
                 <div class="card bg-dark">
                     <div class="card-body">
                         <form id="formTask" autocomplete="off">
                             <div class="form-floating mb-3">
-                                <input type="text" id="title" class="form-control" style="border:0;" placeholder="Task name">
+                                <input type="text" id="title" name="title" class="form-control" style="border:0;" placeholder="Task name">
                                 <label for="title">Task name</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <textarea id="description" cols="30" rows="20" placeholder="Task description"
+                                <textarea id="description" name="description" cols="30" rows="20" placeholder="Task description"
                                     class="form-control" style="height: 100px"></textarea>
                                 <label for="description">Task description</label>
                             </div>
@@ -41,8 +41,7 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <div id="tasks">
-                </div>
+                <div id="tasks"></div>
             </div>
         </div>
     </div>
