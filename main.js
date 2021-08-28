@@ -40,8 +40,6 @@ function isEmpty(task) {
     return isEmpty;
 }
 
-isEmpty({a:"", b:""})
-
 function taskExist(task) {
     return getTasks().find(currentTask => currentTask.title == task.title);
 }
@@ -65,6 +63,44 @@ function setTask(e) {
     }
 }
 
+function showFormModify(formModify) {
+    const divModify = document.getElementById("tasks");
+    divModify.prepend(formModify);
+}
+
+function createFormToModify(task) {
+    const row = createElementWithAttributes("div", { class: "row mx-1" });
+    const formModify = createElementWithAttributes("form", { id: "formModify" });
+    const card = createElementWithAttributes("div", { class: "card mb-2 bg-dark text-light" });
+    const cardBody = createElementWithAttributes("div", { class: "card-body" });
+    const cardTitle = createElementWithAttributes("div", { class: "card-title" });
+    const h5Title = createElementWithContent("h5", "Title");
+    const inputTitle = createElementWithAttributes("input", { name: "title", id: "title", value: task.title });
+    const cardText = createElementWithAttributes("p", { class: "card-text" });
+    const h5Description = createElementWithContent("h5", "Description");
+    const inputDescription = createElementWithAttributes("input", { name: "description", id: "description", value: task.description });
+    const btnSubmit = createElementWithAttributes("input", { id: title, type: "submit", class: "btn btn-success float-end mx-1", value: "Save" });
+    formModify.addEventListener("submit", setTask)
+    cardTitle.appendChild(h5Title);
+    cardTitle.appendChild(inputTitle);
+    cardText.appendChild(h5Description);
+    cardText.appendChild(inputDescription);
+    formModify.appendChild(cardTitle);
+    formModify.appendChild(cardText);
+    formModify.appendChild(btnSubmit);
+    cardBody.appendChild(formModify);
+    card.appendChild(cardBody);
+    row.appendChild(card);
+    deleteTask(task.title);
+    showFormModify(row);
+}
+
+function modifyTask(id) {
+    const tasks = getTasks();
+    const task = tasks.find(task => task.title === id)
+    createFormToModify(task);
+}
+
 function deleteTask(titleTask) {
     let tasks = JSON.parse(localStorage.getItem('tasks'));
     tasks.forEach((element, index) => {
@@ -84,6 +120,7 @@ function createTaskCard({ title, description }) {
     const h5title = createElementWithContent("h5", title);
     const cardText = createElementComplete("p", { class: "card-text" }, description);
     const btnDelete = createElementComplete("a", { id: title, class: "btn btn-danger float-end" }, "Delete");
+    const btnModify = createElementComplete("a", { id: title, class: "btn btn-warning float-end mx-1" }, "Modify");
     row.appendChild(card);
     card.appendChild(cardBody);
     cardBody.appendChild(cardTitle);
@@ -92,7 +129,11 @@ function createTaskCard({ title, description }) {
     btnDelete.addEventListener("click", function (e) {
         deleteTask(e.target.id);
     });
+    btnModify.addEventListener("click", function (e) {
+        modifyTask(e.target.id);
+    });
     cardBody.appendChild(btnDelete);
+    cardBody.appendChild(btnModify);
     return row;
 }
 
@@ -113,7 +154,6 @@ function displayTasks() {
 
 function getTasks() {
     const data = JSON.parse(localStorage.getItem('tasks'));
-    console.log(data);
     return data ?? [];
 }
 
