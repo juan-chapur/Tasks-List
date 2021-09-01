@@ -120,7 +120,7 @@ function createTaskCard({ title, description }) {
     const h5title = createElementWithContent("h5", title);
     const cardText = createElementComplete("p", { class: "card-text" }, description);
     const btnDelete = createElementComplete("a", { id: title, class: "btn btn-danger float-end" }, "Delete");
-    const btnModify = createElementComplete("a", { id: title, class: "btn btn-warning float-end mx-1" }, "Modify");
+    const btnModify = createElementComplete("a", { id: title, class: "btn btn-warning float-end mx-1", href: "#nav" }, "Modify");
     row.appendChild(card);
     card.appendChild(cardBody);
     cardBody.appendChild(cardTitle);
