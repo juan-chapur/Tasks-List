@@ -16,10 +16,10 @@
 ## Screenshots📸
 
 ### Desktop
-![Screenshot](img\desktop.png)
+![Screenshot](./img/desktop.png)
 
 ### Mobile
-![Screenshot](img\mobile.png)
+![Screenshot](./img/mobile.png)
 
 ## Prueba 🎮
 
